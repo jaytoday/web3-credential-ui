@@ -7,14 +7,25 @@ import ChooseIssuer from './pages/ChooseIssuer'
 interface Props {
     setPage: (i: number) => void;
     page: number;
+    onCancel: () => void;
+    onVerify: () => void;
 }
 
+
+
 export function CredentialDialog(props: Props)  {
-    const { page, setPage } = props;
+    const { page, setPage, onCancel, onVerify } = props;
     const [status, setStatus] = React.useState<string>('pending');
     const [completedSetup, setCompletedSetup] = React.useState<boolean>(false);
 
     React.useEffect(() => {
+        if (page === -1){
+            if (status === 'verified'){
+                onVerify();
+            } else if (status === 'failed') {
+                onCancel();
+            }
+        }
         if (page === 0){
             // temporary demo code 
             setCompletedSetup(false);
