@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Circle",
+        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+    },
+    {
+        "name": "Coinbase",
+        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+    },
+    {
+        "name": "Gemini",
+        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+    },
+    {
+        "name": "Block",
+        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+    },
+    {
+        "name": "FTX",
+        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+    },
+    {
+        "name": "Alkemi",
+        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+    }
+]
+
+

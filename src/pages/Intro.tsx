@@ -3,11 +3,12 @@ import { Dialog } from '@headlessui/react'
 import { KeyIcon } from '@heroicons/react/outline'
 
 interface ModalProps {
+    credential: any;
     setPage: (i: number) => void;
 }
 
 const Intro = (props: ModalProps) => {
-    const { setPage } = props;
+    const { credential, setPage } = props;
     return (
         <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto"  onClose={() => setPage(-1)} open={true}>
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -25,8 +26,20 @@ const Intro = (props: ModalProps) => {
                     </div>
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                       <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                        This Transaction Requires a KYC Credential
+                      Web3 Credential Requirement
                       </Dialog.Title>
+                      <div className="my-8">
+                        <blockquote className="relative px-4 pb-4 text-xl border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500 quote">
+                          <div>
+                            <span className="text-lg font-semibold inline-block py-1 px-2 uppercase rounded text-gray-600 bg-gray-200 uppercase last:mr-0 mr-1">
+                              <a href={credential.id}>{credential.name}</a>
+                            </span>
+                          </div>
+                          <div className="mt-4">
+                          {credential.description}
+                          </div>
+                        </blockquote>
+                      </div>
                       <div className="my-8">
                         <p className="text-md text-gray-500">
                           Credential verification allows apps to verify attributes about users without sacrificing their privacy.

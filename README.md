@@ -45,3 +45,8 @@ While the parent component rendering `CredentialDialog` is required to pass in `
  A demo application based on [web3-react](https://github.com/NoahZinsmeister/web3-react) is in the `demo` directory.
 
 There is currently a [bug](https://stackoverflow.com/questions/66488492/solve-having-more-than-one-copy-of-react-in-the-same-app) that requires removing `react` and `react-dom` from `demo/node_modules` for the demo to load.
+
+## TODO
+
+- Use web3.js to verify contract using `isVerified` method in credential registry.
+- Implement example registry and instructions for testing locally using (hardhat)[https://github.com/NomicFoundation/hardhat]

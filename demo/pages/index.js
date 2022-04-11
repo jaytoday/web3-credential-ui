@@ -71,10 +71,13 @@ export default function Home() {
               </button>
           </div>
           <CredentialDialog 
+            account={account}
             page={credentialDialogPage} 
             setPage={setCredentialDialogPage} 
             onCancel={() => console.log('cancelled credential dialog')}
             onVerify={() => console.log('verfied credential')}
+            credentialId={'0xe1e5170b2df5840bb2103ad1180361841397DE2'}
+            verifyAccount={(account, setStatus, completedSetup) => { setTimeout(() => { setStatus(account && completedSetup ? 'verified' : 'failed') }, 5000); }}
           />
         </div>
       )}

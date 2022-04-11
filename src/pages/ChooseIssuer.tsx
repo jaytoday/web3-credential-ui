@@ -1,17 +1,23 @@
 import * as React from "react";
 import { Dialog } from '@headlessui/react'
 import { KeyIcon } from '@heroicons/react/outline'
+import { Issuer } from '../types/models'
+
 
 interface ModalProps {
     setPage: (i: number) => void;
+    issuers: Issuer[];
+    selectedIssuer: Issuer;
+    setSelectedIssuer: (issuer: Issuer) => void;
 }
 
 const SELECTED_BUTTON_CLASSES = `mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-center text-white px-6 py-2 text-lg focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-600`;
 const DEFAULT_BUTTON_CLASSES = `mx-2 my-2 bg-white transition duration-150 ease-in-out focus:outline-none hover:bg-gray-200 text-center rounded text-indigo-700 px-6 py-2 text-lg focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-70`;
 
 const ChooseIssuer = (props: ModalProps) => {
-    const [selected, setSelected] = React.useState<string>('valora');
-    const { setPage } = props;
+    
+    const { setPage, issuers, setSelectedIssuer, selectedIssuer } = props;
+
     return (
         <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto"  onClose={() => setPage(-1)} open={true}>
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -33,12 +39,11 @@ const ChooseIssuer = (props: ModalProps) => {
                       </Dialog.Title>
                       <div className="my-8">
                         <div className="flex flex-wrap justify-center">
-                        <button onClick={() => setSelected('valora')} className={selected === 'valora' ? SELECTED_BUTTON_CLASSES : DEFAULT_BUTTON_CLASSES}>Valora</button>
-                            <button onClick={() => setSelected('circle')} className={selected === 'circle' ? SELECTED_BUTTON_CLASSES : DEFAULT_BUTTON_CLASSES}>Circle</button>
-                            <button onClick={() => setSelected('coinbase')} className={selected === 'coinbase' ? SELECTED_BUTTON_CLASSES : DEFAULT_BUTTON_CLASSES}>Coinbase</button>
-                            <button onClick={() => setSelected('ftx')} className={selected === 'ftx' ? SELECTED_BUTTON_CLASSES : DEFAULT_BUTTON_CLASSES}>FTX</button>
-                            <button onClick={() => setSelected('block')} className={selected === 'block' ? SELECTED_BUTTON_CLASSES : DEFAULT_BUTTON_CLASSES}>Block</button>
-                            <button onClick={() => setSelected('alkemi')} className={selected === 'alkemi' ? SELECTED_BUTTON_CLASSES : DEFAULT_BUTTON_CLASSES}>Alkemi</button>
+                            {issuers.map((issuer: Issuer) => (
+                              <span key={issuer.name}>
+                              <button onClick={() => setSelectedIssuer(issuer)} className={selectedIssuer.name === issuer.name ? SELECTED_BUTTON_CLASSES : DEFAULT_BUTTON_CLASSES}>{issuer.name}</button>
+                              </span>
+                            ))}
                         </div>
                       </div>
                     </div>

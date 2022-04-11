@@ -1,13 +1,16 @@
 import * as React from "react";
 import { Dialog } from '@headlessui/react'
 import { ClipboardListIcon } from '@heroicons/react/outline'
+import { Issuer, Credential } from '../types/models'
 
 interface ModalProps {
     setPage: (i: number) => void;
+    issuer: Issuer;
+    credential: Credential;
 }
 
 const CompleteSetup = (props: ModalProps) => {
-    const { setPage } = props;
+    const { setPage, issuer, credential } = props;
     return (
         <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto"  onClose={() => setPage(-1)} open={true}>
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -25,21 +28,21 @@ const CompleteSetup = (props: ModalProps) => {
                     </div>
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                       <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                       Complete Valora KYC Credential Setup
+                       Complete {issuer.name} Credential Setup
                       </Dialog.Title>
                       <div className="my-8">
-                        <p className="text-md  mt-4 text-gray-500">
-                         1. Create or sign into <a className="font-bold underline">Valora mobile app</a>
-                        </p>
-                        <p className="text-md  mt-4 text-gray-500">
-                         2. Select `Account` from navigation menu 
-                        </p>
-                        <p className="text-md  mt-4 text-gray-500">
-                         3. Tap 'Verify Account' on Account page 
-                        </p>
-                        <p className="text-md  mt-4 text-gray-500">
-                         4. Follow the directions until you receive notification that your account has been verified.
-                        </p>
+                      <div>
+                            <span className="text-sm font-semibold inline-block py-1 px-2 uppercase rounded text-gray-600 bg-gray-200 uppercase last:mr-0 mr-1">
+                              <a href={credential.id}>{credential.name}</a>
+                            </span>
+                      </div>
+                        <ol className="list-decimal ml-6">
+                        {issuer?.instructions.map((instruction: string, i) => (
+                          <li key={i} className="text-md  mt-4 text-gray-500">
+                            {instruction}
+                         </li>
+                        ))}
+                        </ol>
                       </div>
                     </div>
                   </div>
@@ -58,6 +61,14 @@ const CompleteSetup = (props: ModalProps) => {
                     onClick={() =>setPage(-1)}
                   >
                     Cancel
+                  </button>
+                  <span className="w-52"></span>
+                  <button
+                    type="button"
+                    className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                    onClick={() =>setPage(2)}
+                  >
+                    Back
                   </button>
                 </div>
               </div>
