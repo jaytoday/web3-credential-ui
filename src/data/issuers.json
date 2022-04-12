@@ -1,27 +1,27 @@
 [
     {
         "name": "Circle",
-        "instructions": ["Circle - Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
+        "instructions": ["Create Circle Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "Coinbase",
-        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
+        "instructions": ["Coinbase - Create Coinbase Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "Gemini",
-        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
+        "instructions": ["Create Gemini Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "Block",
-        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
+        "instructions": ["Create Block Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "FTX",
-        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
+        "instructions": ["Create FTX Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "Alkemi",
-        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
+        "instructions": ["Create Aklemi Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     }
 ]
 
