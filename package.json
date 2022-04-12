@@ -1,6 +1,6 @@
 {
   "name": "web3-credential-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React library for credential verification",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
