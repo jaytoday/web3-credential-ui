@@ -20,7 +20,7 @@
     "postcss": "^8.3.6",
     "tailwindcss": "^2.2.7",
     "web3": "^1.5.1",
-    "web3-credential-ui": "link:../"
+    "web3-credential-ui": "0.0.3"
   },
   "devDependencies": {
     "eslint": "7.32.0",
