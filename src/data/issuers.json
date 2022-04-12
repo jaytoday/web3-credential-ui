@@ -1,27 +1,27 @@
 [
     {
         "name": "Circle",
-        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+        "instructions": ["Circle - Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "Coinbase",
-        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "Gemini",
-        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "Block",
-        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "FTX",
-        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     },
     {
         "name": "Alkemi",
-        "instructions": ["Step 1", "Step 2", "Step 3", "Step 4"]
+        "instructions": ["Create an Account", "Navigate to Account Page", "Select 'Verify Account'", "Complete Account Verification"]
     }
 ]
 
